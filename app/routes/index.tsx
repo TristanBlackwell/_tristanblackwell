@@ -1,6 +1,13 @@
+import Hero from "~/components/Hero";
+import Navbar from "~/components/Navbar";
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div>
+      <Navbar />
+      <main className="px-20">
+        <Hero />
+      </main>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>

@@ -1,13 +1,17 @@
 import { Link, Links, LiveReload, Meta, Outlet } from "remix";
 import type { MetaFunction } from "remix";
+import main from "./styles/main.css";
 import styles from "./styles/tailwind.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: main },
+    { rel: "stylesheet", href: styles },
+  ];
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Tristan Blackwell" };
 };
 
 export default function App() {
@@ -19,9 +23,8 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-dark-blue">
         {process.env.NODE_ENV === "development" && <LiveReload />}
-        <Link to="/posts">Posts</Link>
         <Outlet />
       </body>
     </html>
