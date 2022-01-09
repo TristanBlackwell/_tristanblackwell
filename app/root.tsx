@@ -1,13 +1,9 @@
-import { Link, Links, LiveReload, Meta, Outlet } from "remix";
+import { Links, LiveReload, Meta, Outlet } from "remix";
 import type { MetaFunction } from "remix";
-import main from "./styles/main.css";
 import styles from "./styles/tailwind.css";
 
 export function links() {
-  return [
-    { rel: "stylesheet", href: main },
-    { rel: "stylesheet", href: styles },
-  ];
+  return [{ rel: "stylesheet", href: styles }];
 }
 
 export const meta: MetaFunction = () => {

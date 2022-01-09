@@ -1,3 +1,4 @@
+import About from "~/components/About";
 import Hero from "~/components/Hero";
 import Navbar from "~/components/Navbar";
 
@@ -5,8 +6,9 @@ export default function Index() {
   return (
     <div>
       <Navbar />
-      <main className="px-20">
+      <main className="px-20 ">
         <Hero />
+        <About />
       </main>
       <h1>Welcome to Remix</h1>
       <ul>

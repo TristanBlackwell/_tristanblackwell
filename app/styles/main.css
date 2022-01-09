@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Julius+Sans+One&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navItem {
+    @apply mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold;
+  }
+}
+
 body {
   font-family: "Source Sans Pros", sans-serif;
   color: #e5e5e5;
@@ -28,4 +38,24 @@ body {
 .navItem:focus::after {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+#skillList {
+  list-style-type: none;
+}
+
+#skillList li::before {
+  content: "\25E6";
+  color: #fca311;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#skillList li {
+  font-size: 46px;
+}
+
+#skillList li span {
+  font-size: 16px;
 }

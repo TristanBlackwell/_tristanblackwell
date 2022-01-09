@@ -7,21 +7,11 @@ export default function Navbar() {
         </div>
         <menu className="pt-2">
           <ul className="flex flex-row">
-            <li className="mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold navItem">
-              About
-            </li>
-            <li className="mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold navItem">
-              Experience
-            </li>
-            <li className="mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold navItem">
-              Projects
-            </li>
-            <li className="mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold navItem">
-              Contact
-            </li>
-            <li className="mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold navItem">
-              Blog
-            </li>
+            <li className="navItem">About</li>
+            <li className="navItem">Experience</li>
+            <li className="navItem">Projects</li>
+            <li className="navItem">Contact</li>
+            <li className="navItem">Blog</li>
           </ul>
         </menu>
         <div className="flex flex-1" />
