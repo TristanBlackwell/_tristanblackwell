@@ -16,9 +16,7 @@ export default function Navbar() {
         </menu>
         <div className="flex flex-1" />
         <div className="">
-          <button className="border-2 border-gold rounded-md px-3 py-1 font-archivo uppercase text-xs text-gold tracking-widest hover:bg-gold-hover transition-opacity">
-            Resume
-          </button>
+          <button className="btn">Resume</button>
         </div>
       </nav>
     </div>

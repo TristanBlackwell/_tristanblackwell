@@ -8,6 +8,10 @@
   .navItem {
     @apply mr-10 uppercase text-xs font-archivo tracking-widest hover:text-white decoration-gold;
   }
+
+  .btn {
+    @apply border-2 border-gold rounded-md px-3 py-1 font-archivo uppercase text-xs text-gold tracking-widest hover:bg-gold-hover transition-opacity;
+  }
 }
 
 body {
