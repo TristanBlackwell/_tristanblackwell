@@ -63,3 +63,52 @@ body {
 #skillList li span {
   font-size: 16px;
 }
+
+.projectDetail {
+  transition: 0.5s ease;
+}
+
+.projectDetailOpen {
+  height: 100%;
+}
+
+.projectCrossClosed {
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+.projectCross {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.projectCross::after,
+.projectCross::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  background-color: #fca311;
+  width: 20px;
+  top: 50%;
+  transition: all 0.2s ease-in-out;
+  right: 0;
+}
+
+.projectCross::after {
+  transform: rotate(90deg);
+  left: 0;
+}
+
+.projectCrossOpen::before {
+  transform: rotate(-45deg);
+  right: -2px;
+  width: 15px;
+}
+
+.projectCrossOpen::after {
+  width: 15px;
+  transform: rotate(45deg);
+  left: -2px;
+}

@@ -1,4 +1,4 @@
-import { Links, LiveReload, Meta, Outlet } from "remix";
+import { Links, LiveReload, Meta, Outlet, Scripts } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/tailwind.css";
 
@@ -22,6 +22,7 @@ export default function App() {
       <body className="bg-dark-blue">
         {process.env.NODE_ENV === "development" && <LiveReload />}
         <Outlet />
+        <Scripts />
       </body>
     </html>
   );
