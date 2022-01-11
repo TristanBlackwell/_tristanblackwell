@@ -2,25 +2,25 @@ import { useState } from "react";
 import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 
 export default function Project() {
-  const [showDetail, setShowDetail] = useState(false);
+  const [hideDetail, setHideDetail] = useState(true);
 
   return (
-    <div className="relative bg-slight-blue flex flex-col-reverse rounded-md h-60 projectCard">
+    <div className="relative  flex flex-col-reverse rounded-md h-60 projectCard">
       <div>
         <div
           className={
-            " top-5 right-3 projectCross z-50 " +
-            (showDetail ? "projectCrossOpen" : "projectCrossClosed")
+            " top-5 right-3 projectCross z-50 cursor-pointer " +
+            (!hideDetail ? "projectCrossClosed" : "projectCrossOpen")
           }
           onClick={() => {
-            setShowDetail(!showDetail);
+            setHideDetail(!hideDetail);
           }}
         />
       </div>
       <div
         className={
-          "px-3 py-2 absolute bottom-0 left-0 right-0 overflow-hidden w-100 h-16 projectDetail " +
-          (showDetail && "projectDetailOpen")
+          "px-3 py-2 pt-4 absolute bottom-0 left-0 right-0 overflow-hidden w-100 h-20 projectDetail " +
+          (!hideDetail && "projectDetailOpen")
         }
       >
         <p className="text-md font-bold">
