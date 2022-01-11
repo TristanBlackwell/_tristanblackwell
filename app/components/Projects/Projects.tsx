@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <section>
       <div>
-        <h2 className="text-3xl font-archivo font-bold tracking-wide mt-20">
+        <h2 className="text-3xl font-archivo font-bold tracking-wide mt-20 text-soft-white">
           Some of my projects
         </h2>
       </div>

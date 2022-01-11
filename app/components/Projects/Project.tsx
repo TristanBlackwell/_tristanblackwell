@@ -23,18 +23,18 @@ export default function Project() {
           (!hideDetail && "projectDetailOpen")
         }
       >
-        <p className="text-md font-bold">
+        <p className="text-md font-bold text-soft-white">
           This is the project name
-          <span className="text-xs font-light text-gray-300 pl-3">
+          <span className="text-xs font-extralight text-gray-400 pl-3">
             July 2020
           </span>
         </p>
         <div className="flex mt-1">
           <a href="/external-link">
-            <ExternalLinkIcon className="h-6 w-6 mr-3" />
+            <ExternalLinkIcon className="h-6 w-6 mr-3 text-gray-400" />
           </a>
           <a href="/code">
-            <CodeIcon className="h-6 w-6" />
+            <CodeIcon className="h-6 w-6 text-gray-400" />
           </a>
         </div>
         <div className="mt-3 text-xs">
