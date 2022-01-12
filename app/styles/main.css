@@ -44,24 +44,34 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
-#skillList {
+.styledList {
   list-style-type: none;
 }
 
-#skillList li::before {
-  content: "\25E6";
+.styledList li::before {
+  content: "o";
   color: #fca311;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+  font-weight: lighter;
 }
 
-#skillList li {
-  font-size: 46px;
+.styledList li {
+  font-size: 24px;
 }
 
-#skillList li span {
+.styledList li span {
   font-size: 16px;
+}
+
+#workList {
+  position: relative;
+}
+
+#workSlider {
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 0.1s;
 }
 
 .projectCard {

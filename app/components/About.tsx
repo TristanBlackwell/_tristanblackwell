@@ -23,32 +23,29 @@ export default function About() {
         </div>
       </div>
       <div className="mt-12">
-        <ul
-          id="skillList"
-          className="flex flex-row items-start justify-items-start justify-around  "
-        >
+        <ul className="flex flex-row items-start justify-items-start justify-around styledList">
           <li>
-            <span className="absolute mt-6 font-bold tracking-wider text-soft-white">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Typescript
             </span>
           </li>
           <li>
-            <span className="absolute mt-6 font-bold tracking-wider text-soft-white">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               React
             </span>
           </li>
           <li>
-            <span className="absolute mt-6 font-bold tracking-wider text-soft-white">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Node.js
             </span>
           </li>
           <li>
-            <span className="absolute mt-6 font-bold tracking-wider text-soft-white">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               C#
             </span>
           </li>
           <li>
-            <span className="absolute mt-6 font-bold tracking-wider text-soft-white">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Twilio
             </span>
           </li>
