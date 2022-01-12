@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 
-export default function Project() {
+interface ProjectProps {
+  index: number;
+}
+
+export default function Project({ index }: ProjectProps) {
   const [hideDetail, setHideDetail] = useState(true);
 
   return (

@@ -3,7 +3,13 @@ import type { MetaFunction } from "remix";
 import styles from "./styles/tailwind.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    {
+      rel: "stylesheet",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+    },
+  ];
 }
 
 export const meta: MetaFunction = () => {
