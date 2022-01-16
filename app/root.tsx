@@ -1,13 +1,20 @@
 import { Links, LiveReload, Meta, Outlet, Scripts } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/tailwind.css";
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
     {
       rel: "stylesheet",
-      href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+      href: "https://unpkg.com/aos@next/dist/aos.css",
+    },
+    {
+      rel: "script",
+      href: "https://unpkg.com/aos@next/dist/aos.js",
     },
   ];
 }
@@ -17,6 +24,11 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <html lang="en">
       <head>

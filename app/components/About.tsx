@@ -2,10 +2,10 @@ import Me from "../images/me.jpg";
 
 export default function About() {
   return (
-    <section>
-      <div className="flex flex-row justify-between mt-32">
+    <section id="about">
+      <div className="flex flex-row justify-between mt-40">
         <div className="border-t-2 border-gold pt-4 px-4 max-w-xl">
-          <p className="animate__animated animate__fadeIn">
+          <p data-aos="fade-down" data-aos-once="true">
             Hi, I’m Tristan 👋 I’m a developer who enjoys solving challenging
             problems with clean and simple solutions. With an interest in
             innovative technologies, I always find myself busy trying out the

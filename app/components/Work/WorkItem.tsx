@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { WorkDetail } from "~/types";
 
 interface WorkItemProps {
@@ -8,7 +7,7 @@ interface WorkItemProps {
 export default function WorkItem({ work }: WorkItemProps) {
   return (
     <>
-      <div className="flex flex-col min-w-fit fade-in">
+      <div className="flex flex-col min-w-fit fade-in" id="workItemRoles">
         {work.roles.map((role) => {
           return (
             <div
@@ -24,6 +23,7 @@ export default function WorkItem({ work }: WorkItemProps) {
         })}
       </div>
       <div
+        id="workItemDesc"
         className="border-l-2 border-gold px-4 pt-4 min-h fade-in"
         style={{ minHeight: "350px" }}
       >

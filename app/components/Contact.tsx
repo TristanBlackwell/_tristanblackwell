@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section>
+    <section id="contact">
       <div className=" w-96 m-auto mt-20">
         <div>
           <h2 className="font-archivo font-bold text-3xl tracking-wide text-center text-soft-white">

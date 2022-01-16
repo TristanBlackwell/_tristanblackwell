@@ -7,10 +7,18 @@ export default function Navbar() {
         </div>
         <menu className="pt-2">
           <ul className="flex flex-row">
-            <li className="navItem">About</li>
-            <li className="navItem">Experience</li>
-            <li className="navItem">Projects</li>
-            <li className="navItem">Contact</li>
+            <li className="navItem">
+              <a href="#about">About</a>
+            </li>
+            <li className="navItem">
+              <a href="#experience">Experience</a>
+            </li>
+            <li className="navItem">
+              <a href="#projects">Projects</a>
+            </li>
+            <li className="navItem">
+              <a href="#contact">Contact</a>
+            </li>
             <li className="navItem">Blog</li>
           </ul>
         </menu>

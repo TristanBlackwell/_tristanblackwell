@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 
-interface ProjectProps {
-  index: number;
-}
-
-export default function Project({ index }: ProjectProps) {
+export default function Project() {
   const [hideDetail, setHideDetail] = useState(true);
 
   return (
-    <div className="relative  flex flex-col-reverse rounded-md h-60 projectCard">
+    <div
+      className="relative  flex flex-col-reverse rounded-md h-60 projectCard"
+      data-aos="fade-up"
+    >
       <div>
         <div
           className={

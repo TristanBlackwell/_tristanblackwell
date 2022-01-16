@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { WorkDetail } from "~/types";
 import WorkItem from "./WorkItem";
 
@@ -33,10 +33,52 @@ const work: WorkDetail[] = [
 ];
 
 export default function Work() {
+  const workTabsRef = useRef<Array<HTMLLIElement | null>>([]);
   const [activeTab, setActiveTab] = useState(0);
 
+  const handleKeyPress = (
+    e: React.KeyboardEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    const tabsLength = workTabsRef.current.length;
+    if (e.key === "Enter") {
+      setActiveTab(index);
+    } else if (e.key === "ArrowUp") {
+      if (index - 1 >= 0) {
+        e.preventDefault();
+        workTabsRef.current[index - 1]?.focus();
+      } else if (index - 1 === -1) {
+        e.preventDefault();
+        workTabsRef.current[tabsLength - 1]?.focus();
+      }
+    } else if (e.key === "ArrowDown") {
+      if (index + 1 <= tabsLength - 1) {
+        e.preventDefault();
+        workTabsRef.current[index + 1]?.focus();
+      } else if (index + 1 === tabsLength) {
+        e.preventDefault();
+        workTabsRef.current[0]?.focus();
+      }
+    }
+  };
+
+  // Reset offset Width to trigger animation again.
+  const triggerAnimation = () => {
+    const workRoles = document.getElementById("workItemRoles");
+    const workDesc = document.getElementById("workItemDesc");
+
+    workRoles?.classList.remove("fade-in");
+    workDesc?.classList.remove("fade-in");
+
+    void workRoles?.offsetWidth;
+    void workDesc?.offsetWidth;
+
+    workRoles?.classList.add("fade-in");
+    workDesc?.classList.add("fade-in");
+  };
+
   return (
-    <section className="mt-20">
+    <section className="mt-20" id="experience">
       <div>
         <h2 className="text-3xl font-archivo font-bold text-soft-white tracking-wide">
           What I&apos;ve been up to
@@ -55,7 +97,14 @@ export default function Work() {
                     }
                     onClick={() => {
                       setActiveTab(index);
+                      triggerAnimation();
                     }}
+                    onKeyDown={(e) => {
+                      handleKeyPress(e, index);
+                    }}
+                    tabIndex={0}
+                    aria-selected={activeTab === index}
+                    ref={(el) => (workTabsRef.current[index] = el)}
                   >
                     {w.name}
                   </li>
