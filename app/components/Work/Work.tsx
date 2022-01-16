@@ -97,7 +97,7 @@ export default function Work() {
                     key={w.name + w.roles[0].duration}
                     className={
                       "workItem px-8 py-3 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
-                      (index === activeTab && "text-gold bg-slight-blue")
+                      (index === activeTab && "text-gold")
                     }
                     onClick={() => {
                       setActiveTab(index);

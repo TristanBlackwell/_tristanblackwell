@@ -1,4 +1,33 @@
+import { useState } from "react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Transition } from "@headlessui/react";
+
+const navItems = [
+  {
+    name: "about",
+    location: "#about",
+  },
+  {
+    name: "experience",
+    location: "#experience",
+  },
+  {
+    name: "projects",
+    location: "#projects",
+  },
+  {
+    name: "contact",
+    location: "#contact",
+  },
+  {
+    name: "blog",
+    location: "#blog",
+  },
+];
+
 export default function Navbar() {
+  const [navOpen, setNavOpen] = useState(false);
+
   const scrollToView = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     location: string
@@ -7,6 +36,7 @@ export default function Navbar() {
     const target = document.getElementById(location);
     target?.scrollIntoView({ behavior: "smooth" });
     target?.focus();
+    setNavOpen(false);
   };
 
   return (
@@ -15,56 +45,66 @@ export default function Navbar() {
         <div className="mr-20">
           <p className="text-xl font-bold">Logo</p>
         </div>
-        <menu className="pt-2">
+        <menu className="pt-2 md:hidden">
           <ul className="flex flex-row">
-            <li className="navItem">
-              <a
-                href="#about"
-                className="navItemLink"
-                onClick={(e) => scrollToView(e, "about")}
-              >
-                About
-              </a>
-            </li>
-            <li className="navItem">
-              <a
-                href="#experience"
-                className="navItemLink"
-                onClick={(e) => scrollToView(e, "experience")}
-              >
-                Experience
-              </a>
-            </li>
-            <li className="navItem">
-              <a
-                href="#projects"
-                className="navItemLink"
-                onClick={(e) => scrollToView(e, "projects")}
-              >
-                Projects
-              </a>
-            </li>
-            <li className="navItem">
-              <a
-                href="#contact"
-                className="navItemLink"
-                onClick={(e) => scrollToView(e, "contact")}
-              >
-                Contact
-              </a>
-            </li>
-            <li className="navItem">
-              <a href="/blog" className="navItemLink">
-                Blog
-              </a>
-            </li>
+            {navItems.map((nav) => (
+              <li key={nav.name} className="navItem">
+                <a
+                  href={nav.location}
+                  className="navItemLink"
+                  onClick={(e) => scrollToView(e, nav.name)}
+                >
+                  {nav.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </menu>
-        <div className="flex flex-1" />
-        <div className="">
-          <button className="btn focus:">Resume</button>
+        <div className="flex flex-1 " />
+        <div>
+          <button className="btn md:hidden 2xl:block">Resume</button>
+          {!navOpen && (
+            <MenuIcon
+              className="text-gold cursor-pointer md:block 2xl:hidden w-8"
+              onClick={() => setNavOpen(!navOpen)}
+            />
+          )}
         </div>
       </nav>
+      <Transition
+        as="aside"
+        show={navOpen}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="h-screen w-64 fixed right-0 top-0 bg-slight-blue z-50"
+        tabIndex={navOpen ? 1 : -1}
+        aria-hidden={!navOpen}
+      >
+        <XIcon
+          className="text-gold cursor-pointer md:block 2xl:hidden w-8 absolute top-8 right-8"
+          onClick={() => setNavOpen(!navOpen)}
+        />
+        <ul className="mt-32 ml-12">
+          {navItems.map((nav) => (
+            <li key={nav.name + "_mobile"} className="navItem mt-8 max-w-max">
+              <a
+                href={nav.location}
+                className="navItemLink text-lg text-soft-white tracking-widest"
+                onClick={(e) => scrollToView(e, nav.name)}
+              >
+                {nav.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="flex justify-center">
+          <button className="btn mt-12">Resume</button>
+        </div>
+      </Transition>
     </div>
   );
 }

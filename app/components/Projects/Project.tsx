@@ -36,11 +36,14 @@ export default function Project() {
       >
         <p className="text-md font-bold text-soft-white">
           This is the project name
-          <span className="text-xs font-extralight text-gray-400 pl-3">
+          <span className="text-xs font-extralight text-gray-400 pl-3 lg:hidden">
             July 2020
           </span>
         </p>
         <div className="flex mt-1">
+          <span className="text-xs font-extralight text-gray-400 mr-2 pt-1 lg:block 2xl:hidden">
+            July 2020
+          </span>
           <a
             href="/external-link"
             className="mr-3 outline-gold transition-colors focus:text-soft-white"

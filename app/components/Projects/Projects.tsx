@@ -11,7 +11,7 @@ export default function Projects() {
         </h2>
       </div>
       <div className="border-t-2 border-gold mt-3" />
-      <div className="grid grid-cols-2 gap-24 mt-12 mx-2">
+      <div className="grid grid-cols-2 gap-24 mt-12 mx-2 lg:gap-12 md:grid-cols-1">
         {projects.map((project) => {
           return <Project key={project} />;
         })}
