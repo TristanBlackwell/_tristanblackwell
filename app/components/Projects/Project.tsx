@@ -12,7 +12,7 @@ export default function Project() {
       <div>
         <div
           className={
-            " top-5 right-3 projectCross z-50 cursor-pointer " +
+            " top-5 right-3 projectCross z-50 cursor-pointer outline-gold " +
             (!hideDetail ? "projectCrossClosed" : "projectCrossOpen")
           }
           onClick={() => {
@@ -41,11 +41,17 @@ export default function Project() {
           </span>
         </p>
         <div className="flex mt-1">
-          <a href="/external-link">
-            <ExternalLinkIcon className="h-6 w-6 mr-3 text-gray-400" />
+          <a
+            href="/external-link"
+            className="mr-3 outline-gold transition-colors focus:text-soft-white"
+          >
+            <ExternalLinkIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors focus:text-inherit " />
           </a>
-          <a href="/code">
-            <CodeIcon className="h-6 w-6 text-gray-400" />
+          <a
+            href="/code"
+            className="mr-3 outline-gold transition-colors focus:text-soft-white"
+          >
+            <CodeIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors " />
           </a>
         </div>
         <div className="mt-3 text-xs">

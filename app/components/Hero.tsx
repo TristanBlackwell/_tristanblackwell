@@ -27,7 +27,7 @@ export default function Hero() {
             href="https://zing.dev/"
             target="_blank"
             rel="noreferrer"
-            className="text-gold font-bold hover:underline decoration-gold"
+            className="text-gold font-bold hover:underline decoration-gold outline-gold"
           >
             Zing
           </a>

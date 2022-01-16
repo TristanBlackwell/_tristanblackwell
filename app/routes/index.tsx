@@ -17,7 +17,10 @@ export default function Index() {
         <Contact />
       </main>
       <footer className="flex justify-center mt-20 py-5">
-        <a href="https://github.com/TristanBlackwell">
+        <a
+          href="https://github.com/TristanBlackwell"
+          className="outline-gold focus:text-gold"
+        >
           <p className="text-sm font-extralight tracking-wide hover:text-gold transition-colors">
             Handcrafted by Tristan Blackwell
           </p>

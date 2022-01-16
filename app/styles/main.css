@@ -9,8 +9,12 @@
     @apply mr-10 uppercase text-xs text-soft-white font-archivo tracking-widest hover:text-white decoration-gold;
   }
 
+  .navItemLink {
+    @apply focus:border-t-2 focus:border-b-2 focus:border-gold;
+  }
+
   .btn {
-    @apply border-2 border-gold rounded-md px-3 py-1 font-archivo uppercase text-xs text-gold tracking-widest hover:bg-gold-hover transition-opacity;
+    @apply border-2 border-gold rounded-md px-3 py-1 font-archivo uppercase text-xs text-gold tracking-widest hover:bg-gold-hover focus:bg-gold-hover outline-none transition-opacity;
   }
 }
 

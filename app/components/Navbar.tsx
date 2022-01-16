@@ -1,4 +1,14 @@
 export default function Navbar() {
+  const scrollToView = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    location: string
+  ) => {
+    e.preventDefault();
+    const target = document.getElementById(location);
+    target?.scrollIntoView({ behavior: "smooth" });
+    target?.focus();
+  };
+
   return (
     <div>
       <nav className="flex flex-row p-8 pb-24">
@@ -8,23 +18,51 @@ export default function Navbar() {
         <menu className="pt-2">
           <ul className="flex flex-row">
             <li className="navItem">
-              <a href="#about">About</a>
+              <a
+                href="#about"
+                className="navItemLink"
+                onClick={(e) => scrollToView(e, "about")}
+              >
+                About
+              </a>
             </li>
             <li className="navItem">
-              <a href="#experience">Experience</a>
+              <a
+                href="#experience"
+                className="navItemLink"
+                onClick={(e) => scrollToView(e, "experience")}
+              >
+                Experience
+              </a>
             </li>
             <li className="navItem">
-              <a href="#projects">Projects</a>
+              <a
+                href="#projects"
+                className="navItemLink"
+                onClick={(e) => scrollToView(e, "projects")}
+              >
+                Projects
+              </a>
             </li>
             <li className="navItem">
-              <a href="#contact">Contact</a>
+              <a
+                href="#contact"
+                className="navItemLink"
+                onClick={(e) => scrollToView(e, "contact")}
+              >
+                Contact
+              </a>
             </li>
-            <li className="navItem">Blog</li>
+            <li className="navItem">
+              <a href="/blog" className="navItemLink">
+                Blog
+              </a>
+            </li>
           </ul>
         </menu>
         <div className="flex flex-1" />
         <div className="">
-          <button className="btn">Resume</button>
+          <button className="btn focus:">Resume</button>
         </div>
       </nav>
     </div>
