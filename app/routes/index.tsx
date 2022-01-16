@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <div>
       <Navbar />
-      <main className="px-20 ">
+      <main className="px-20 sm:px-3 ">
         <Hero />
         <About />
         <Work />

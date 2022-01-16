@@ -3,7 +3,7 @@ import Me from "../images/me.jpg";
 export default function About() {
   return (
     <section id="about">
-      <div className="flex flex-row justify-between mt-40">
+      <div className="flex flex-row mt-40 md:flex-col md:mt-28">
         <div className="border-t-2 border-gold pt-4 px-4 max-w-xl">
           <p data-aos="fade-down" data-aos-once="true">
             Hi, I’m Tristan 👋 I’m a developer who enjoys solving challenging
@@ -20,33 +20,33 @@ export default function About() {
             find me down the gym.
           </p>
         </div>
-        <div className="">
-          <img src={Me} alt="Me!" />
+        <div className="flex justify-center w-full lg:ml-6 md:mt-5 md:ml-0">
+          <img src={Me} alt="Me!" className="object-contain" />
         </div>
       </div>
       <div className="mt-12">
-        <ul className="flex flex-row items-start justify-items-start justify-around styledList">
-          <li>
+        <ul className="flex flex-row items-start justify-items-start justify-around styledList md:flex-col md:items-center">
+          <li className="md:mr-12">
             <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Typescript
             </span>
           </li>
-          <li>
+          <li className="md:mr-12">
             <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               React
             </span>
           </li>
-          <li>
+          <li className="md:mr-12">
             <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Node.js
             </span>
           </li>
-          <li>
+          <li className="md:mr-12">
             <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               C#
             </span>
           </li>
-          <li>
+          <li className="md:mr-12">
             <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Twilio
             </span>

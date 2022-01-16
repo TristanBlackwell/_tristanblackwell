@@ -84,16 +84,20 @@ export default function Work() {
           What I&apos;ve been up to
         </h2>
         <div className="border-t-2 border-gold mt-3"></div>
-        <div className="mt-8 flex">
+        <div className="mt-8 flex lg:flex-col">
           <div className="max-w-min">
-            <ul id="workList" aria-label="Work tabs">
+            <ul
+              id="workList"
+              aria-label="Work tabs"
+              className="lg:flex lg:overflow-x-scroll lg:overflow-y-hidden"
+            >
               {work.map((w, index) => {
                 return (
                   <li
                     key={w.name + w.roles[0].duration}
                     className={
-                      "workItem px-8 py-3 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none " +
-                      (index === activeTab && "text-gold")
+                      "workItem px-8 py-3 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
+                      (index === activeTab && "text-gold bg-slight-blue")
                     }
                     onClick={() => {
                       setActiveTab(index);
@@ -112,7 +116,7 @@ export default function Work() {
               })}
               <div
                 id="workSlider"
-                className="border-r-2 border-gold py-7 text-lg font-bold absolute top-0 right-0 "
+                className="border-r-2 border-gold py-7 text-lg font-bold absolute top-0 right-0 lg:hidden "
                 style={{
                   transform: `translateY(calc(${activeTab} * 52px))`,
                 }}
