@@ -18,6 +18,14 @@ export default function Project() {
           onClick={() => {
             setHideDetail(!hideDetail);
           }}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              setHideDetail(!hideDetail);
+            }
+          }}
+          tabIndex={0}
+          aria-label="Expand description"
+          aria-checked={!hideDetail}
         />
       </div>
       <div

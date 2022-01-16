@@ -86,7 +86,7 @@ export default function Work() {
         <div className="border-t-2 border-gold mt-3"></div>
         <div className="mt-8 flex">
           <div className="max-w-min">
-            <ul id="workList">
+            <ul id="workList" aria-label="Work tabs">
               {work.map((w, index) => {
                 return (
                   <li
