@@ -4,6 +4,7 @@ import styles from "./styles/tailwind.css";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
+import Navbar from "~/components/Navbar";
 
 export function links() {
   return [
@@ -39,7 +40,21 @@ export default function App() {
       </head>
       <body className="bg-dark-blue">
         {process.env.NODE_ENV === "development" && <LiveReload />}
+        <Navbar />
+
         <Outlet />
+        <footer className="flex justify-center mt-20 py-5">
+          <a
+            href="https://github.com/TristanBlackwell/tristanblackwellv1"
+            target="_blank"
+            rel="noreferrer"
+            className="outline-gold focus:text-gold"
+          >
+            <p className="text-sm font-extralight tracking-wide hover:text-gold transition-colors">
+              Handcrafted by Tristan Blackwell
+            </p>
+          </a>
+        </footer>
         <Scripts />
       </body>
     </html>

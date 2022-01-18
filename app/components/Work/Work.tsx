@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { WorkDetail } from "~/types";
 import WorkItem from "./WorkItem";
+import Component, { attributes, filename } from "../../content/work/zing.mdx";
 
 const work: WorkDetail[] = [
   {

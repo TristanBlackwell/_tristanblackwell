@@ -1,42 +1,49 @@
 import { useState } from "react";
+import { useLocation } from "remix";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Transition } from "@headlessui/react";
 
 const navItems = [
   {
     name: "about",
-    location: "#about",
+    location: "/#about",
   },
   {
     name: "experience",
-    location: "#experience",
+    location: "/#experience",
   },
   {
     name: "projects",
-    location: "#projects",
+    location: "/#projects",
   },
   {
     name: "contact",
-    location: "#contact",
+    location: "/#contact",
   },
   {
     name: "blog",
-    location: "#blog",
+    location: "/blog",
   },
 ];
 
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
 
-  const scrollToView = (
+  const loc = useLocation();
+
+  const navigateTo = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     location: string
   ) => {
-    e.preventDefault();
-    const target = document.getElementById(location);
-    target?.scrollIntoView({ behavior: "smooth" });
-    target?.focus();
-    setNavOpen(false);
+    // if we are on the index page then use scrollIntoView otherwise allow
+    // browser to route
+    if (location.startsWith("/#") && loc.pathname === "/") {
+      e.preventDefault();
+      const target = document.getElementById(location.substring(2));
+      target?.scrollIntoView({ behavior: "smooth" });
+      target?.focus();
+      setNavOpen(false);
+    }
   };
 
   return (
@@ -52,7 +59,10 @@ export default function Navbar() {
                 <a
                   href={nav.location}
                   className="navItemLink"
-                  onClick={(e) => scrollToView(e, nav.name)}
+                  onClick={(e) => navigateTo(e, nav.location)}
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-duration="2000"
                 >
                   {nav.name}
                 </a>
@@ -62,7 +72,7 @@ export default function Navbar() {
         </menu>
         <div className="flex flex-1 " />
         <div>
-          <button className="btn md:hidden 2xl:block">Resume</button>
+          {/* <button className="btn md:hidden 2xl:block">Resume</button> */}
           {!navOpen && (
             <MenuIcon
               className="text-gold cursor-pointer md:block 2xl:hidden w-8"
@@ -94,7 +104,7 @@ export default function Navbar() {
               <a
                 href={nav.location}
                 className="navItemLink text-lg text-soft-white tracking-widest"
-                onClick={(e) => scrollToView(e, nav.name)}
+                onClick={(e) => navigateTo(e, nav.location)}
               >
                 {nav.name}
               </a>
