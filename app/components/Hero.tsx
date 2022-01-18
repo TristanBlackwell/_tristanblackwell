@@ -1,3 +1,5 @@
+import { Link } from "remix";
+
 export default function Hero() {
   return (
     <div className="flex flex-row mt-16 lg:flex-col md:mt-2">
@@ -23,14 +25,14 @@ export default function Hero() {
           I am a software engineer based in Oxford, England. I focus on the web
           but work in other areas too. Right now I’m helping build cloud
           communications for businesses at{" "}
-          <a
-            href="https://zing.dev/"
+          <Link
+            to="https://zing.dev/"
             target="_blank"
             rel="noreferrer"
             className="text-gold font-bold hover:underline decoration-gold outline-gold"
           >
             Zing
-          </a>
+          </Link>
         </p>
       </div>
     </div>

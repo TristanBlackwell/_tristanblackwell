@@ -1,3 +1,4 @@
+import { Link } from "remix";
 import Me from "../images/me.jpg";
 
 export default function About() {
@@ -10,14 +11,15 @@ export default function About() {
             problems with clean and simple solutions. With an interest in
             innovative technologies, I always find myself busy trying out the
             latest thing and{" "}
-            <a
-              href="https://zing.dev/"
+            <Link
+              to="https://zing.dev/"
+              prefetch="intent"
               target="_blank"
               rel="noreferrer"
               className="text-gold font-bold hover:underline decoration-gold outline-gold tracking-wide"
             >
               getting involved wherever I can.
-            </a>
+            </Link>
             <br />
             <br />
             Currently my focus in mostly on building out communication solutions

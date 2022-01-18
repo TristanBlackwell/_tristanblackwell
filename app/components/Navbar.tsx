@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "remix";
+import { useLocation, Link } from "remix";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Transition } from "@headlessui/react";
 
@@ -56,16 +56,17 @@ export default function Navbar() {
           <ul className="flex flex-row">
             {navItems.map((nav) => (
               <li key={nav.name} className="navItem">
-                <a
-                  href={nav.location}
+                <Link
+                  to={nav.location}
                   className="navItemLink"
+                  prefetch="intent"
                   onClick={(e) => navigateTo(e, nav.location)}
                   data-aos="fade-down"
                   data-aos-once="true"
                   data-aos-duration="2000"
                 >
                   {nav.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -101,13 +102,13 @@ export default function Navbar() {
         <ul className="mt-32 ml-12">
           {navItems.map((nav) => (
             <li key={nav.name + "_mobile"} className="navItem mt-8 max-w-max">
-              <a
-                href={nav.location}
+              <Link
+                to={nav.location}
                 className="navItemLink text-lg text-soft-white tracking-widest"
                 onClick={(e) => navigateTo(e, nav.location)}
               >
                 {nav.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

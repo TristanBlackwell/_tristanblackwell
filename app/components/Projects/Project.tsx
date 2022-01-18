@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/outline";
+import { Link } from "remix";
 
 export default function Project() {
   const [hideDetail, setHideDetail] = useState(true);
@@ -44,18 +45,18 @@ export default function Project() {
           <span className="text-xs font-extralight text-gray-400 mr-2 pt-1 lg:block 2xl:hidden">
             July 2020
           </span>
-          <a
-            href="/external-link"
+          <Link
+            to="/external-link"
             className="mr-3 outline-gold transition-colors focus:text-soft-white"
           >
             <ExternalLinkIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors focus:text-inherit " />
-          </a>
-          <a
-            href="/code"
+          </Link>
+          <Link
+            to="/code"
             className="mr-3 outline-gold transition-colors focus:text-soft-white"
           >
             <CodeIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors " />
-          </a>
+          </Link>
         </div>
         <div className="mt-3 text-xs">
           Lorem Ipsum is simply dummy text of the printing and typesetting

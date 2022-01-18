@@ -1,3 +1,5 @@
+import { Link } from "remix";
+
 export default function Contact() {
   return (
     <section id="contact">
@@ -13,12 +15,12 @@ export default function Contact() {
           back to you as soon as possible.
         </p>
         <div className=" mt-8 flex justify-around">
-          <a
-            href="mailto:tristanblackwell@hotmail.co.uk"
+          <Link
+            to="mailto:tristanblackwell@hotmail.co.uk"
             className="btn  m-auto py-2"
           >
             Contact me
-          </a>
+          </Link>
         </div>
       </div>
     </section>
