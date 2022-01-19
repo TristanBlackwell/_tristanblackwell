@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import { Link } from "remix";
 
 export default function Index() {
   const posts = [1, 2, 3];
@@ -12,7 +13,7 @@ export default function Index() {
           <span className="text-gold font-bold">22</span> Articles
         </p>
       </div>
-      <section className="grid grid-cols-2 gap-24 mt-12 sm:grid-cols-1">
+      <section className="grid grid-cols-2 gap-24 mt-12 sm:grid-cols-1 md:gap-8">
         {posts.map((post) => {
           return (
             <div
@@ -20,17 +21,21 @@ export default function Index() {
               className="bg-slight-blue rounded-md pt-4 px-4 pb-1"
             >
               <p className="font-light">January 25th 2022</p>
-              <h2 className="text-xl text-soft-white tracking-wide font-archivo mb-2">
-                The blog title goes along here
-              </h2>
+              <Link to="a-blog-post" prefetch="intent">
+                <h2 className="text-xl text-soft-white tracking-wide font-archivo font-bold mb-2 cursor-pointer">
+                  The blog title goes along here
+                </h2>
+              </Link>
               <p className="mb-4">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
-              <div className="flex text-soft-white hover:text-gold transition-colors">
-                <span className="italic">see more</span>
-                <ChevronRightIcon className="h-6 w-6 hover:translate-x-1 hover:transition-transform hover:ease-in-out" />
-              </div>
+              <Link to="a-blog-post">
+                <div className="flex text-soft-white hover:text-gold transition-colors cursor-pointer">
+                  <span className="italic">see more</span>
+                  <ChevronRightIcon className="h-6 w-6 hover:translate-x-1 hover:transition-transform hover:ease-in-out" />
+                </div>
+              </Link>
             </div>
           );
         })}
