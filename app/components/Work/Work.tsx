@@ -1,39 +1,14 @@
 import { useRef, useState } from "react";
-import { WorkDetail } from "~/types";
+import { WorkMarkdownAttributes } from "~/indexContent";
 import WorkItem from "./WorkItem";
-import Component, { attributes, filename } from "../../content/work/zing.mdx";
+interface WorkProps {
+  workItems: {
+    attributes: WorkMarkdownAttributes;
+    html: string;
+  }[];
+}
 
-const work: WorkDetail[] = [
-  {
-    name: "Zing",
-    roles: [
-      {
-        title: "Junior Developer",
-        duration: "June 2021 - Present",
-      },
-    ],
-    description:
-      "Zing build solutions helping businesses connect with their customers through a multitude of communication channels. As a Twilio Gold consulting partner, Zing leverage the Twilio stack to deliver experiences unique to client’s needs.",
-    highlights: [
-      "Worked alongside a team of developers to build a contact centre solution for the Norwegian Refugee Council allowing agents to connect to beneficiaries in need of help with no cost to them.",
-      "Developed a solution for Foodhub to easily connect with their ever-growing collection of restaurant partners. A solution required to integrate with an established internal CRM & existing AWS architecture.",
-      "Built & improved on internal systems tackling the challenges that arise as a small business",
-    ],
-  },
-  {
-    name: "Brookes",
-    roles: [
-      {
-        title: "Undergraduate Student",
-        duration: "September 2019 - May 2023",
-      },
-    ],
-    description: "Computer science",
-    highlights: ["highlight 1"],
-  },
-];
-
-export default function Work() {
+export default function Work({ workItems }: WorkProps) {
   const workTabsRef = useRef<Array<HTMLLIElement | null>>([]);
   const [activeTab, setActiveTab] = useState(0);
 
@@ -85,17 +60,17 @@ export default function Work() {
           What I&apos;ve been up to
         </h2>
         <div className="border-t-2 border-gold mt-3"></div>
-        <div className="mt-8 flex lg:flex-col">
+        <div className="mt-8 flex lg:flex-col" data-aos="fade-up">
           <div className="max-w-min">
             <ul
               id="workList"
               aria-label="Work tabs"
               className="lg:flex lg:overflow-x-scroll lg:overflow-y-hidden"
             >
-              {work.map((w, index) => {
+              {workItems.map((w, index: number) => {
                 return (
                   <li
-                    key={w.name + w.roles[0].duration}
+                    key={w.attributes.name + w.attributes.roles[0]}
                     className={
                       "workItem px-8 py-3 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
                       (index === activeTab && "text-gold")
@@ -111,7 +86,7 @@ export default function Work() {
                     aria-selected={activeTab === index}
                     ref={(el) => (workTabsRef.current[index] = el)}
                   >
-                    {w.name}
+                    {w.attributes.name}
                   </li>
                 );
               })}
@@ -124,8 +99,8 @@ export default function Work() {
               />
             </ul>
           </div>
-          {typeof work[activeTab] !== "undefined" && (
-            <WorkItem work={work[activeTab]} />
+          {typeof workItems[activeTab] !== "undefined" && (
+            <WorkItem work={workItems[activeTab]} />
           )}
         </div>
       </div>

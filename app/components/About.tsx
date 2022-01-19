@@ -6,7 +6,7 @@ export default function About() {
     <section id="about">
       <div className="flex flex-row mt-40 md:flex-col md:mt-28">
         <div className="border-t-2 border-gold pt-4 px-4 max-w-xl">
-          <p data-aos="fade-down" data-aos-once="true">
+          <p data-aos="fade-up">
             Hi, I’m Tristan 👋 I’m a developer who enjoys solving challenging
             problems with clean and simple solutions. With an interest in
             innovative technologies, I always find myself busy trying out the
@@ -38,27 +38,46 @@ export default function About() {
       <div className="mt-12">
         <ul className="flex flex-row items-start justify-items-start justify-around styledList md:flex-col md:items-center">
           <li className="md:mr-12">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span
+              className="absolute mt-2 font-bold tracking-wider text-soft-white"
+              data-aos="fade-left"
+            >
               Typescript
             </span>
           </li>
           <li className="md:mr-12">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span
+              className="absolute mt-2 font-bold tracking-wider text-soft-white"
+              data-aos="fade-left"
+              data-aos-delay="250"
+            >
               React
             </span>
           </li>
           <li className="md:mr-12">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span
+              className="absolute mt-2 font-bold tracking-wider text-soft-white"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
               Node.js
             </span>
           </li>
           <li className="md:mr-12">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span
+              className="absolute mt-2 font-bold tracking-wider text-soft-white"
+              data-aos="fade-left"
+              data-aos-delay="750"
+            >
               C#
             </span>
           </li>
           <li className="md:mr-12">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span
+              className="absolute mt-2 font-bold tracking-wider text-soft-white"
+              data-aos="fade-left"
+              data-aos-delay="1000"
+            >
               Twilio
             </span>
           </li>

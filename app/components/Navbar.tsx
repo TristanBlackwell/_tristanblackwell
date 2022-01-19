@@ -104,6 +104,7 @@ export default function Navbar() {
             <li key={nav.name + "_mobile"} className="navItem mt-8 max-w-max">
               <Link
                 to={nav.location}
+                prefetch="intent"
                 className="navItemLink text-lg text-soft-white tracking-widest"
                 onClick={(e) => navigateTo(e, nav.location)}
               >

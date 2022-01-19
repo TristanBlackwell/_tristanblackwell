@@ -48,11 +48,11 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
-.styledList {
+.highlights ul {
   list-style-type: none;
 }
 
-.styledList li::before {
+.highlights ul li::before {
   content: "o";
   color: #fca311;
   display: inline-block;
@@ -61,11 +61,11 @@ body {
   font-weight: lighter;
 }
 
-.styledList li {
+.highlights ul li {
   font-size: 24px;
 }
 
-.styledList li span {
+.highlights ul li {
   font-size: 16px;
 }
 

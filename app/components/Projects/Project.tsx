@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/outline";
-import { Link } from "remix";
+import { ProjectMarkdownAttributes } from "~/indexContent";
 
-export default function Project() {
+interface ProjectProps {
+  project: {
+    attributes: ProjectMarkdownAttributes;
+  };
+}
+
+export default function Project({ project }: ProjectProps) {
   const [hideDetail, setHideDetail] = useState(true);
 
   return (
@@ -36,27 +42,27 @@ export default function Project() {
         }
       >
         <p className="text-md font-bold text-soft-white">
-          This is the project name
+          {project.attributes.name}
           <span className="text-xs font-extralight text-gray-400 pl-3 lg:hidden">
-            July 2020
+            {project.attributes.time}
           </span>
         </p>
         <div className="flex mt-1">
           <span className="text-xs font-extralight text-gray-400 mr-2 pt-1 lg:block 2xl:hidden">
-            July 2020
+            {project.attributes.time}
           </span>
-          <Link
-            to="/external-link"
+          <a
+            href={project.attributes.projectLink ?? "#"}
             className="mr-3 outline-gold transition-colors focus:text-soft-white"
           >
             <ExternalLinkIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors focus:text-inherit " />
-          </Link>
-          <Link
-            to="/code"
+          </a>
+          <a
+            href={project.attributes.codeLink || "#"}
             className="mr-3 outline-gold transition-colors focus:text-soft-white"
           >
             <CodeIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors " />
-          </Link>
+          </a>
         </div>
         <div className="mt-3 text-xs">
           Lorem Ipsum is simply dummy text of the printing and typesetting
