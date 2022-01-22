@@ -34,13 +34,17 @@ module.exports = {
     "import/no-default-export": "off",
 
     // standard extensions shouldn't be named with file extensions, but unusual ones (eg JS/css) should be.
+    // sometimes we may import .server or similar so leave as warn
     "import/extensions": [
-      "error",
+      "warn",
       {
         ts: "never",
         tsx: "never",
       },
     ],
+
+    // With Remix we can throw a response or object etc so not too useful here
+    "@typescript-eslint/no-throw-literal": "off",
 
     // linebreak settings - turn them off as windows git usually handles this
     "linebreak-style": "off",
