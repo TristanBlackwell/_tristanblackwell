@@ -1,6 +1,7 @@
 import { posts } from "@prisma/client";
 import { Link, LoaderFunction, useLoaderData } from "remix";
 import { db } from "~/utils/db.server";
+import ReactMarkdown from "react-markdown";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const post = await db.posts.findUnique({
@@ -22,7 +23,9 @@ export default function PostSlug() {
         {post.title}
       </h1>
       <div className="mt-24 grid grid-cols-4">
-        <div className="col-span-3 pr-12">{post.content}</div>
+        <div className="col-span-3 pr-12">
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
         <div className="md:hidden lg:block">
           <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
             Table of Contents

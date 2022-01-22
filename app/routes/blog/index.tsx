@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { Link, LoaderFunction, useLoaderData } from "remix";
 import { db } from "~/utils/db.server";
+import { ISOToFriendlyDate } from "~/utils/helpers";
 
 type LoaderData = {
   blogPosts: { title: string; created_at: Date; slug: string }[];
@@ -38,7 +39,7 @@ export default function Index() {
               key={post.created_at + post.title}
               className="bg-slight-blue rounded-md pt-4 px-4 pb-1"
             >
-              <p className="font-light">{post.created_at}</p>
+              <p className="font-light">{ISOToFriendlyDate(post.created_at)}</p>
               <Link to={post.slug} prefetch="intent">
                 <h2 className="text-xl text-soft-white tracking-wide font-archivo font-bold mb-2 cursor-pointer">
                   {post.title}
