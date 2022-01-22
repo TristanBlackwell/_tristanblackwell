@@ -24,7 +24,9 @@ export default function PostSlug() {
       </h1>
       <div className="mt-24 grid grid-cols-4">
         <div className="col-span-3 pr-12">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown className="prose dark:prose-invert prose-headings:text-soft-white prose-h2:text-gold prose-h2:font-archivo">
+            {post.content}
+          </ReactMarkdown>
         </div>
         <div className="md:hidden lg:block">
           <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
