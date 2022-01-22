@@ -3,6 +3,7 @@ import { Link, LoaderFunction, useLoaderData } from "remix";
 import { db } from "~/utils/db.server";
 import ReactMarkdown from "react-markdown";
 import { ISOToFriendlyDate } from "~/utils/helpers";
+import SyntaxHighlight from "~/components/Markdown/CodeBlock";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const post = await db.posts.findUnique({
@@ -18,6 +19,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function PostSlug() {
   const post = useLoaderData<posts>();
+
   return (
     <div className="ml-44 mr-2 lg:ml-32 md:ml-24 sm:ml-8">
       <h1 className="font:archivo text-2xl text-soft-white font-bold tracking-wider">
@@ -25,11 +27,14 @@ export default function PostSlug() {
       </h1>
       <div className="mt-24 grid grid-cols-4">
         <div className="col-span-3 pr-12">
-          <ReactMarkdown className="markdown min-w-full">
+          <ReactMarkdown
+            className="markdown min-w-full"
+            components={SyntaxHighlight}
+          >
             {post.content}
           </ReactMarkdown>
         </div>
-        <div className="md:hidden lg:block" id="toc">
+        <div className="md:hidden lg:block sticky top-1 h-min" id="toc">
           <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
             Table of Contents
           </h4>
