@@ -16,6 +16,10 @@
   .btn {
     @apply border-2 border-gold rounded-md px-3 py-1 font-archivo uppercase text-xs text-gold tracking-widest hover:bg-gold-hover focus:bg-gold-hover outline-none transition-opacity;
   }
+
+  .markdown {
+    @apply prose dark:prose-invert prose-headings:text-soft-white prose-h2:text-gold prose-h2:font-archivo prose-blockquote:bg-slight-blue prose-blockquote:rounded-md prose-blockquote:py-1 prose-blockquote:px-3 hover:prose-a:text-gold prose-a:transition-colors prose-blockquote:border-l-gold prose-img:rounded-md prose-img:mx-auto;
+  }
 }
 
 body {
@@ -143,6 +147,19 @@ body {
   width: 15px;
   transform: rotate(45deg);
   left: -2px;
+}
+
+.markdown blockquote p::before,
+.markdown blockquote p::after {
+  content: none;
+}
+
+.markdown ol li::marker {
+  color: #e5e5e5;
+}
+
+.markdown ul li::marker {
+  color: #fca311;
 }
 
 .fade-in {

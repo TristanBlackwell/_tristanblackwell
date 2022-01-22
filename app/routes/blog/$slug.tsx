@@ -2,6 +2,7 @@ import { posts } from "@prisma/client";
 import { Link, LoaderFunction, useLoaderData } from "remix";
 import { db } from "~/utils/db.server";
 import ReactMarkdown from "react-markdown";
+import { ISOToFriendlyDate } from "~/utils/helpers";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const post = await db.posts.findUnique({
@@ -24,14 +25,20 @@ export default function PostSlug() {
       </h1>
       <div className="mt-24 grid grid-cols-4">
         <div className="col-span-3 pr-12">
-          <ReactMarkdown className="prose dark:prose-invert prose-headings:text-soft-white prose-h2:text-gold prose-h2:font-archivo">
+          <ReactMarkdown className="markdown min-w-full">
             {post.content}
           </ReactMarkdown>
         </div>
-        <div className="md:hidden lg:block">
+        <div className="md:hidden lg:block" id="toc">
           <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
             Table of Contents
           </h4>
+          <p className="uppercase font-archivo">
+            Last updated:{" "}
+            <span className="text-soft-white font-source normal-case text-md">
+              {ISOToFriendlyDate(post.updated_at)}
+            </span>
+          </p>
         </div>
       </div>
     </div>
