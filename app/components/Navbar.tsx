@@ -43,6 +43,14 @@ export default function Navbar() {
       target?.scrollIntoView({ behavior: "smooth" });
       target?.focus();
       setNavOpen(false);
+    } else if (location.startsWith("/#")) {
+      // If we're on another page, let it paint then scroll to element
+      setTimeout(() => {
+        const target = document.getElementById(location.substring(2));
+        target?.scrollIntoView({ behavior: "smooth" });
+        target?.focus();
+        setNavOpen(false);
+      }, 500);
     }
   };
 

@@ -37,7 +37,7 @@ export default function Index() {
           return (
             <div
               key={post.created_at + post.title}
-              className="bg-slight-blue rounded-md pt-4 px-4 pb-1"
+              className="bg-slight-blue rounded-md pt-4 px-4 pb-1 shadow-2xl"
             >
               <p className="font-light">{ISOToFriendlyDate(post.created_at)}</p>
               <Link to={post.slug} prefetch="intent">

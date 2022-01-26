@@ -37,47 +37,28 @@ export default function About() {
       </div>
       <div className="mt-12">
         <ul className="flex flex-row items-start justify-items-start justify-around styledList md:flex-col md:items-center">
-          <li className="md:mr-12">
-            <span
-              className="absolute mt-2 font-bold tracking-wider text-soft-white"
-              data-aos="fade-left"
-            >
+          <li className="md:mr-12" data-aos="fade-left">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Typescript
             </span>
           </li>
-          <li className="md:mr-12">
-            <span
-              className="absolute mt-2 font-bold tracking-wider text-soft-white"
-              data-aos="fade-left"
-              data-aos-delay="250"
-            >
+          <li className="md:mr-12" data-aos="fade-left" data-aos-delay="250">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               React
             </span>
           </li>
-          <li className="md:mr-12">
-            <span
-              className="absolute mt-2 font-bold tracking-wider text-soft-white"
-              data-aos="fade-left"
-              data-aos-delay="500"
-            >
+          <li className="md:mr-12" data-aos="fade-left" data-aos-delay="500">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Node.js
             </span>
           </li>
-          <li className="md:mr-12">
-            <span
-              className="absolute mt-2 font-bold tracking-wider text-soft-white"
-              data-aos="fade-left"
-              data-aos-delay="750"
-            >
+          <li className="md:mr-12" data-aos="fade-left" data-aos-delay="750">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               C#
             </span>
           </li>
-          <li className="md:mr-12">
-            <span
-              className="absolute mt-2 font-bold tracking-wider text-soft-white"
-              data-aos="fade-left"
-              data-aos-delay="1000"
-            >
+          <li className="md:mr-12" data-aos="fade-left" data-aos-delay="1000">
+            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
               Twilio
             </span>
           </li>
