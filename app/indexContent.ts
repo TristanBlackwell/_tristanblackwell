@@ -15,6 +15,8 @@ export type ProjectMarkdownAttributes = {
   time: string;
   projectLink?: string;
   codeLink?: string;
+  imgSrc?: string;
+  altText?: string;
 };
 
 const workPath = path.join(__dirname, "..", "content/work");

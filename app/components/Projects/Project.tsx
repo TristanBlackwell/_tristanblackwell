@@ -16,6 +16,11 @@ export default function Project({ project }: ProjectProps) {
       className="relative  flex flex-col-reverse rounded-md h-60 projectCard"
       data-aos="fade-up"
     >
+      <img
+        className="w-full h-full bg-cover opacity-[.15] hover:opacity-40 transition-opacity"
+        src={project.attributes.imgSrc}
+        alt={project.attributes.altText}
+      />
       <div>
         <div
           className={
@@ -37,7 +42,7 @@ export default function Project({ project }: ProjectProps) {
       </div>
       <div
         className={
-          "px-3 py-2 pt-4 absolute bottom-0 left-0 right-0 overflow-hidden w-100 h-20 projectDetail " +
+          "px-3 py-2 pt-4 absolute bottom-0 left-0 overflow-hidden w-fit inline-block h-20 projectDetail " +
           (!hideDetail && "projectDetailOpen")
         }
       >

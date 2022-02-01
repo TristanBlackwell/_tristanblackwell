@@ -4,3 +4,10 @@ export type WorkDetail = {
   description: string;
   highlights: string[];
 };
+
+export type TocItem = {
+  id: string;
+  title: string;
+  items: TocItem[];
+  size: number;
+};

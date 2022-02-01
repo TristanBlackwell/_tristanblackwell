@@ -13,6 +13,7 @@ model posts {
   updated_at DateTime @default(now()) @db.Timestamp(6)
   slug       String   @db.VarChar(150) @unique
   title      String   @db.VarChar(150) @unique
+  toc        String   @db.VarChar(150) @default("")
   content    String
 
 }

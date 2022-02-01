@@ -20,7 +20,6 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index() {
   const posts = useLoaderData<LoaderData>();
-  console.log(posts);
 
   return (
     <div className="px-44 lg:px-24 md:px-16 sm:px-8">
