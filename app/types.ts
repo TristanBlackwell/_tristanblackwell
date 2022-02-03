@@ -8,6 +8,6 @@ export type WorkDetail = {
 export type TocItem = {
   id: string;
   title: string;
-  items: TocItem[];
-  size: number;
+  depth: number;
+  type: string;
 };
