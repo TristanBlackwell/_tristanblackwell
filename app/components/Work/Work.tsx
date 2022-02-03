@@ -72,7 +72,7 @@ export default function Work({ workItems }: WorkProps) {
                   <li
                     key={w.attributes.name + w.attributes.roles[0]}
                     className={
-                      "workItem px-8 py-3 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
+                      "workItem px-8 py-3 h-14 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
                       (index === activeTab && "text-gold")
                     }
                     onClick={() => {
@@ -94,7 +94,7 @@ export default function Work({ workItems }: WorkProps) {
                 id="workSlider"
                 className="border-r-2 border-gold py-7 text-lg font-bold absolute top-0 right-0 lg:hidden "
                 style={{
-                  transform: `translateY(calc(${activeTab} * 52px))`,
+                  transform: `translateY(calc(${activeTab} * 57px))`,
                 }}
               />
             </ul>

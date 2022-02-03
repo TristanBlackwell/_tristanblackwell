@@ -27,8 +27,8 @@ export default function About() {
             in this space.
             <br />
             <br /> When I’m not working on coding, at work or in my own time, I
-            like to train at the gym or a fairly new activity to me is learning
-            a second language, japanese!
+            like to train at the gym and persue other interests. A fairly new
+            activity to me is learning a second language, japanese!
           </p>
         </div>
         <div className="flex justify-center w-full lg:ml-6 md:mt-5 md:ml-0">

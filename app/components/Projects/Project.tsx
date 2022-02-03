@@ -5,6 +5,7 @@ import { ProjectMarkdownAttributes } from "~/indexContent";
 interface ProjectProps {
   project: {
     attributes: ProjectMarkdownAttributes;
+    html: string;
   };
 }
 
@@ -17,7 +18,7 @@ export default function Project({ project }: ProjectProps) {
       data-aos="fade-up"
     >
       <img
-        className="w-full h-full bg-cover opacity-[.15] hover:opacity-40 transition-opacity"
+        className="w-full h-full bg-contain opacity-[.10] hover:opacity-40 transition-opacity"
         src={project.attributes.imgSrc}
         alt={project.attributes.altText}
       />
@@ -56,27 +57,31 @@ export default function Project({ project }: ProjectProps) {
           <span className="text-xs font-extralight text-gray-400 mr-2 pt-1 lg:block 2xl:hidden">
             {project.attributes.time}
           </span>
-          <a
-            href={project.attributes.projectLink ?? "#"}
-            className="mr-3 outline-gold transition-colors focus:text-soft-white"
-          >
-            <ExternalLinkIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors focus:text-inherit " />
-          </a>
-          <a
-            href={project.attributes.codeLink || "#"}
-            className="mr-3 outline-gold transition-colors focus:text-soft-white"
-          >
-            <CodeIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors " />
-          </a>
+          {project.attributes.projectLink !== "" && (
+            <a
+              href={project.attributes.projectLink ?? "#"}
+              target="_blank"
+              className="mr-3 outline-gold transition-colors focus:text-soft-white"
+              rel="noreferrer"
+            >
+              <ExternalLinkIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors focus:text-inherit " />
+            </a>
+          )}
+          {project.attributes.codeLink !== "" && (
+            <a
+              href={project.attributes.codeLink || "#"}
+              target="_blank"
+              className="mr-3 outline-gold transition-colors focus:text-soft-white"
+              rel="noreferrer"
+            >
+              <CodeIcon className="h-6 w-6 text-gray-400 hover:text-soft-white transition-colors " />
+            </a>
+          )}
         </div>
-        <div className="mt-3 text-xs">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book. It has survived not
-          only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: project.html }}
+          className="mt-3 text-xs"
+        />
       </div>
     </div>
   );

@@ -55,12 +55,13 @@ export async function getProjectItems() {
   return Promise.all(
     dir.map(async (filename) => {
       const file = await fs.readFile(path.join(projectsPath, filename));
-      const { attributes } = parseFrontMatter(file.toString());
+      const { attributes, body } = parseFrontMatter(file.toString());
       invariant(
         isValidProjectAttributes(attributes),
         `${filename} has bad attributes`
       );
-      return { attributes };
+      const html = marked(body);
+      return { attributes, html };
     })
   );
 }

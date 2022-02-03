@@ -38,15 +38,6 @@ export default function WorkItem({ work }: WorkItemProps) {
           dangerouslySetInnerHTML={{ __html: work.html }}
           className="pl-6 mt-2 highlights"
         />
-        {/* <ul className="styledList pl-6 mt-2">
-          {work.highlights.map((hl) => {
-            return (
-              <li key={hl}>
-                <span className="text-xs">{hl}</span>
-              </li>
-            );
-          })}
-        </ul> */}
       </div>
     </>
   );

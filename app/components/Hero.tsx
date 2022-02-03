@@ -2,7 +2,7 @@ import { Link } from "remix";
 
 export default function Hero() {
   return (
-    <div className="flex flex-row mt-16 lg:flex-col md:mt-2">
+    <div className="flex flex-row justify-between mt-16 lg:flex-col md:mt-2">
       <div>
         <h1
           className="text-4xl font-archivo tracking-wider font-bold text-soft-white md:text-3xl sm:text-2xl xs:text-center"

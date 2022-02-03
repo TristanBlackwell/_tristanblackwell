@@ -10,7 +10,7 @@
   }
 
   .navItemLink {
-    @apply focus:border-t-2 focus:border-b-2 focus:border-gold;
+    @apply focus:ring-0 focus:border-t-2 focus:border-b-2 focus:border-gold;
   }
 
   .btn {

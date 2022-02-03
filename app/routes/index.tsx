@@ -18,6 +18,7 @@ interface IndexContent {
   }[];
   projects: {
     attributes: ProjectMarkdownAttributes;
+    html: string;
   }[];
 }
 

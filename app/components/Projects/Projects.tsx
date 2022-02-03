@@ -4,6 +4,7 @@ import Project from "./Project";
 interface ProjectsProps {
   projects: {
     attributes: ProjectMarkdownAttributes;
+    html: string;
   }[];
 }
 

@@ -18,6 +18,9 @@ module.exports = {
       "5xl": ["80px", { lineHeight: "80px", letterSpacing: "-0.032em" }],
     },
     screens: {
+      "3xl": { max: "5000px" },
+      // => @media (max-width: 5000px) { ... }
+
       "2xl": { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
 

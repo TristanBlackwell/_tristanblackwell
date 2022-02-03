@@ -104,7 +104,7 @@ export default function Navbar() {
         aria-hidden={!navOpen}
       >
         <XIcon
-          className="text-gold cursor-pointer md:block 2xl:hidden w-8 absolute top-8 right-8"
+          className="text-gold cursor-pointer md:block 3xl:hidden w-8 absolute top-8 right-8"
           onClick={() => setNavOpen(!navOpen)}
         />
         <ul className="mt-32 ml-12">
