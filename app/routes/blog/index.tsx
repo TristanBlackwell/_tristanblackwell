@@ -4,14 +4,19 @@ import { db } from "~/utils/db.server";
 import { ISOToFriendlyDate } from "~/utils/helpers";
 
 type LoaderData = {
-  blogPosts: { title: string; created_at: Date; slug: string }[];
+  blogPosts: {
+    title: string;
+    created_at: Date;
+    slug: string;
+    excerpt: string;
+  }[];
   count: number;
 };
 
 export const loader: LoaderFunction = async () => {
   const posts = await db.posts.findMany({
     take: 5,
-    select: { title: true, created_at: true, slug: true },
+    select: { title: true, created_at: true, slug: true, excerpt: true },
     orderBy: { created_at: "desc" },
   });
 
@@ -50,10 +55,7 @@ export default function Index() {
                   {post.title}
                 </h2>
               </Link>
-              <p className="mb-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
+              <p className="mb-4">{post.excerpt}</p>
               <Link to={post.slug}>
                 <div className="flex text-soft-white hover:text-gold transition-colors cursor-pointer">
                   <span className="italic">see more</span>
