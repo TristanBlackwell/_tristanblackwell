@@ -14,7 +14,7 @@ export default function Project({ project }: ProjectProps) {
 
   return (
     <div
-      className="projectCard  relative flex h-60 flex-col-reverse rounded-md"
+      className="projectCard relative flex h-60 flex-col-reverse rounded-md"
       data-aos="fade-up"
     >
       <img

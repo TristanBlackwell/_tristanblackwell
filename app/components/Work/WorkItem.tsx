@@ -31,7 +31,7 @@ export default function WorkItem({ work }: WorkItemProps) {
       <div
         id="workItemDesc"
         className="border-gold min-h fade-in border-l-2 px-4 pt-4 lg:border-l-0 lg:pl-0"
-        style={{ minHeight: "350px" }}
+        //style={{ minHeight: "350px" }}
       >
         <p>{work.attributes.description}</p>
         <div

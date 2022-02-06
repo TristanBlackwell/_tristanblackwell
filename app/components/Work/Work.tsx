@@ -60,7 +60,7 @@ export default function Work({ workItems }: WorkProps) {
           What I&apos;ve been up to
         </h2>
         <div className="border-gold mt-3 border-t-2"></div>
-        <div className="mt-8 flex lg:flex-col" data-aos="fade-up">
+        <div className="mt-8 flex h-fit lg:flex-col" data-aos="fade-up">
           <div className="max-w-min">
             <ul
               id="workList"

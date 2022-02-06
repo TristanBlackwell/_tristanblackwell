@@ -60,6 +60,7 @@ export default function PostSlug() {
 
   return (
     <div className="ml-44 mr-2 sm:ml-8 md:ml-24 lg:ml-32">
+      <div className="bg-slight-blue absolute top-0 left-0 z-[-5] h-[45%] w-full opacity-50" />
       <h1 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
         {post.title}
       </h1>
