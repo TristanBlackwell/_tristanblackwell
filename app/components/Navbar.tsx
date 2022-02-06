@@ -59,7 +59,9 @@ export default function Navbar() {
       <nav className="flex flex-row p-8 pb-24">
         <div className="mr-20">
           <Link to="/" prefetch="intent">
-            <p className="text-xl font-bold">Logo</p>
+            <p className="text-soft-white font-archivo whitespace-nowrap text-xl font-bold tracking-wider">
+              T. Blackwell
+            </p>
           </Link>
         </div>
         <menu className="pt-2 md:hidden">

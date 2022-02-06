@@ -1,5 +1,4 @@
-import { posts } from "@prisma/client";
-import { Link, LoaderFunction, useLoaderData } from "remix";
+import { Link, LoaderFunction, MetaFunction, useLoaderData } from "remix";
 import ReactMarkdown from "react-markdown";
 import SyntaxHighlight from "~/components/Markdown/CodeBlock";
 import { useEffect, useState } from "react";
@@ -8,9 +7,16 @@ import { Post, TocItem } from "~/types";
 import { useActiveId } from "~/hooks/useActiveId";
 import Toc from "~/components/blog/Toc";
 
+export const meta: MetaFunction = ({ data }: { data: Post }) => {
+  return {
+    title: data.title,
+    description: data.excerpt,
+  };
+};
+
 export const loader: LoaderFunction = async ({ params }) => {
   if (!params.slug) {
-    throw new Response("I'm not sure waht to look for.", { status: 400 });
+    throw new Response("I'm not sure what to look for.", { status: 400 });
   }
 
   const { data: post, error } = await supabase
@@ -32,7 +38,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function PostSlug() {
-  const post = useLoaderData<posts>();
+  const post = useLoaderData<Post>();
 
   const [toc, setToc] = useState<TocItem[]>([]);
   const activeId = useActiveId(toc);

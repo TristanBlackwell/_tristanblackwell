@@ -1,8 +1,21 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import { Link, LoaderFunction, useCatch, useLoaderData } from "remix";
+import {
+  Link,
+  LoaderFunction,
+  MetaFunction,
+  useCatch,
+  useLoaderData,
+} from "remix";
 import supabase from "~/services/supabase.service";
 import { ISOToFriendlyDate } from "~/utils/helpers";
 import { PostMeta } from "~/types";
+
+export const meta: MetaFunction = () => {
+  return {
+    title: "Blog - Tristan Blackwell",
+    description: "Tristan Blackwell's Blog",
+  };
+};
 
 type LoaderData = {
   blogPosts: PostMeta[] | null;
@@ -62,6 +75,7 @@ export default function Index() {
               <div
                 key={post.created_at + post.title}
                 className="bg-slight-blue rounded-md px-4 pt-4 pb-1 shadow-2xl"
+                data-aos="fade-up"
               >
                 <p className="font-light">
                   {ISOToFriendlyDate(post.created_at)}

@@ -3,7 +3,7 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx}"],
   theme: {
     fontFamily: {
-      julius: '"Julius Sans One", sans-serif',
+      lora: '"Lora", sans-serif',
       archivo: '"Archivo Narrow", sans-serif',
       source: '"Source Sans Pro", sans-serif',
     },
