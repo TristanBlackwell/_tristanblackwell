@@ -5,6 +5,20 @@ export type WorkDetail = {
   highlights: string[];
 };
 
+export interface PostMeta {
+  id: number;
+  title: string;
+  created_at: Date;
+  slug: string;
+  excerpt: string;
+}
+
+export interface Post extends PostMeta {
+  updated_at: Date;
+  toc: string;
+  content: string;
+}
+
 export type TocItem = {
   id: string;
   title: string;

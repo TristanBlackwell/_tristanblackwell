@@ -1,20 +1,31 @@
 import { posts } from "@prisma/client";
 import { Link, LoaderFunction, useLoaderData } from "remix";
-import { db } from "~/utils/db.server";
 import ReactMarkdown from "react-markdown";
 import SyntaxHighlight from "~/components/Markdown/CodeBlock";
 import { useEffect, useState } from "react";
-import { TocItem } from "~/types";
+import supabase from "~/services/supabase.service";
+import { Post, TocItem } from "~/types";
 import { useActiveId } from "~/hooks/useActiveId";
 import Toc from "~/components/blog/Toc";
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const post = await db.posts.findUnique({
-    where: { slug: params.slug },
-  });
+  if (!params.slug) {
+    throw new Response("I'm not sure waht to look for.", { status: 400 });
+  }
+
+  const { data: post, error } = await supabase
+    .from<Post>("posts")
+    .select("*")
+    .eq("slug", params.slug)
+    .single();
 
   if (!post) {
     throw new Response("Post was not found", { status: 404 });
+  } else if (error) {
+    throw new Response(
+      "I can't help right now. Maybe try refreshing the page?",
+      { status: 500 }
+    );
   }
 
   return post;
@@ -53,6 +64,7 @@ export default function PostSlug() {
         return "";
       })
       .filter((line) => line !== "");
+    console.log(JSON.stringify(matchedHeadings));
     return matchedHeadings as TocItem[];
   };
 
@@ -70,7 +82,9 @@ export default function PostSlug() {
 
   useEffect(() => {
     setHeadings();
-    setToc(retrieveParsedData(post.content));
+    if (post.toc) {
+      setToc([]);
+    }
     // We only want to run this on initial render
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

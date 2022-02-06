@@ -47,7 +47,11 @@ export default function Toc({ toc, activeId, updatedAt }: TocProps) {
       <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
         Table of Contents
       </h4>
-      <Headings headings={toc} activeEl={activeId} />
+      {toc.length > 0 ? (
+        <Headings headings={toc} activeEl={activeId} />
+      ) : (
+        <p>Nothing to show</p>
+      )}
       <p className="uppercase font-archivo">
         Last updated:{" "}
         <span className="text-soft-white font-source normal-case text-md">
