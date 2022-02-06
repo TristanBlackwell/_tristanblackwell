@@ -15,7 +15,7 @@ const Headings = ({ headings, activeEl }: HeadingsProps) => (
           key={heading.id}
           className={`pl-${heading.depth} my-${Math.floor(
             heading.depth / 2
-          )} text-gray-400 hover:text-soft-white transition-colors font-source`}
+          )} hover:text-soft-white font-source text-gray-400 transition-colors`}
         >
           <Link
             to={`#${heading.id}`}
@@ -43,8 +43,8 @@ interface TocProps {
 
 export default function Toc({ toc, activeId, updatedAt }: TocProps) {
   return (
-    <div className="md:hidden lg:block sticky top-3 h-min" id="toc">
-      <h4 className="uppercase font-archivo font-bold text-soft-white tracking-wider">
+    <div className="sticky top-3 h-min md:hidden lg:block" id="toc">
+      <h4 className="font-archivo text-soft-white font-bold uppercase tracking-wider">
         Table of Contents
       </h4>
       {toc.length > 0 ? (
@@ -52,9 +52,9 @@ export default function Toc({ toc, activeId, updatedAt }: TocProps) {
       ) : (
         <p>Nothing to show</p>
       )}
-      <p className="uppercase font-archivo">
+      <p className="font-archivo uppercase">
         Last updated:{" "}
-        <span className="text-soft-white font-source normal-case text-md">
+        <span className="text-soft-white font-source text-md normal-case">
           {ISOToFriendlyDate(updatedAt)}
         </span>
       </p>

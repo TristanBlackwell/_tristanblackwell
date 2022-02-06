@@ -84,7 +84,7 @@ export default function Navbar() {
           {/* <button className="btn md:hidden 2xl:block">Resume</button> */}
           {!navOpen && (
             <MenuIcon
-              className="text-gold cursor-pointer md:block 2xl:hidden w-8"
+              className="text-gold w-8 cursor-pointer md:block 2xl:hidden"
               onClick={() => setNavOpen(!navOpen)}
             />
           )}
@@ -99,12 +99,12 @@ export default function Navbar() {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className="h-screen w-64 fixed right-0 top-0 bg-slight-blue z-50"
+        className="bg-slight-blue fixed right-0 top-0 z-50 h-screen w-64"
         tabIndex={navOpen ? 1 : -1}
         aria-hidden={!navOpen}
       >
         <XIcon
-          className="text-gold cursor-pointer md:block 3xl:hidden w-8 absolute top-8 right-8"
+          className="text-gold 3xl:hidden absolute top-8 right-8 w-8 cursor-pointer md:block"
           onClick={() => setNavOpen(!navOpen)}
         />
         <ul className="mt-32 ml-12">
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link
                 to={nav.location}
                 prefetch="intent"
-                className="navItemLink text-lg text-soft-white tracking-widest"
+                className="navItemLink text-soft-white text-lg tracking-widest"
                 onClick={(e) => navigateTo(e, nav.location)}
               >
                 {nav.name}

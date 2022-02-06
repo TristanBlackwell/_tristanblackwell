@@ -59,8 +59,8 @@ export default function PostSlug() {
   }, []);
 
   return (
-    <div className="ml-44 mr-2 lg:ml-32 md:ml-24 sm:ml-8">
-      <h1 className="font:archivo text-2xl text-soft-white font-bold tracking-wider">
+    <div className="ml-44 mr-2 sm:ml-8 md:ml-24 lg:ml-32">
+      <h1 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
         {post.title}
       </h1>
       <div className="mt-24 grid grid-cols-4">
@@ -81,7 +81,7 @@ export default function PostSlug() {
 export function CatchBoundary() {
   return (
     <div className="text-center">
-      <h2 className="font:archivo text-2xl text-soft-white font-bold tracking-wider">
+      <h2 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
         Oops,
         <br /> That post doesn&apos;t seem to exist!
       </h2>
@@ -97,7 +97,7 @@ export function CatchBoundary() {
 export function ErrorBoundary() {
   return (
     <div className="text-center">
-      <h2 className="font:archivo text-2xl text-soft-white font-bold tracking-wider">
+      <h2 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
         Uh Oh,
         <br /> Looks like something went wrong!
       </h2>

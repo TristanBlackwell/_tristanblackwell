@@ -56,23 +56,23 @@ export default function Work({ workItems }: WorkProps) {
   return (
     <section className="mt-20" id="experience">
       <div>
-        <h2 className="text-3xl font-archivo font-bold text-soft-white tracking-wide">
+        <h2 className="font-archivo text-soft-white text-3xl font-bold tracking-wide">
           What I&apos;ve been up to
         </h2>
-        <div className="border-t-2 border-gold mt-3"></div>
+        <div className="border-gold mt-3 border-t-2"></div>
         <div className="mt-8 flex lg:flex-col" data-aos="fade-up">
           <div className="max-w-min">
             <ul
               id="workList"
               aria-label="Work tabs"
-              className="lg:flex lg:overflow-x-scroll lg:overflow-y-hidden"
+              className="lg:flex lg:overflow-y-hidden lg:overflow-x-scroll"
             >
               {workItems.map((w, index: number) => {
                 return (
                   <li
                     key={w.attributes.name + w.attributes.roles[0]}
                     className={
-                      "workItem px-8 py-3 h-14 text-center text-lg font-bold tracking-wide cursor-pointer hover:text-gold transition-colors focus:bg-slight-blue outline-none lg:mb-2 " +
+                      "workItem hover:text-gold focus:bg-slight-blue h-14 cursor-pointer px-8 py-3 text-center text-lg font-bold tracking-wide outline-none transition-colors lg:mb-2 " +
                       (index === activeTab && "text-gold")
                     }
                     onClick={() => {
@@ -92,7 +92,7 @@ export default function Work({ workItems }: WorkProps) {
               })}
               <div
                 id="workSlider"
-                className="border-r-2 border-gold py-7 text-lg font-bold absolute top-0 right-0 lg:hidden "
+                className="border-gold absolute top-0 right-0 border-r-2 py-7 text-lg font-bold lg:hidden "
                 style={{
                   transform: `translateY(calc(${activeTab} * 57px))`,
                 }}

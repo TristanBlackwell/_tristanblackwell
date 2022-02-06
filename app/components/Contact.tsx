@@ -5,12 +5,12 @@ export default function Contact() {
     <section id="contact">
       <div className="m-auto mt-20 max-w-md">
         <div>
-          <h2 className="font-archivo font-bold text-3xl tracking-wide text-center text-soft-white">
+          <h2 className="font-archivo text-soft-white text-center text-3xl font-bold tracking-wide">
             Get in touch
           </h2>
         </div>
-        <div className="border-t-2 border-gold w-48 m-auto mt-2"></div>
-        <p className="text-center mt-8">
+        <div className="border-gold m-auto mt-2 w-48 border-t-2"></div>
+        <p className="mt-8 text-center">
           I’m always open for new messages 👇 Send me something and I’ll get
           back to you as soon as possible.
         </p>

@@ -4,8 +4,8 @@ import Me from "../images/me.jpg";
 export default function About() {
   return (
     <section id="about">
-      <div className="flex flex-row mt-40 md:flex-col md:mt-28">
-        <div className="border-t-2 border-gold pt-4 px-4 max-w-xl">
+      <div className="mt-40 flex flex-row md:mt-28 md:flex-col">
+        <div className="border-gold max-w-xl border-t-2 px-4 pt-4">
           <p data-aos="fade-up">
             Hi, I’m Tristan 👋 I’m a developer who enjoys solving challenging
             problems with clean and simple solutions. With an interest in
@@ -16,7 +16,7 @@ export default function About() {
               prefetch="intent"
               target="_blank"
               rel="noreferrer"
-              className="text-gold font-bold hover:underline decoration-gold outline-gold tracking-wide"
+              className="text-gold decoration-gold outline-gold font-bold tracking-wide hover:underline"
             >
               getting involved wherever I can.
             </Link>
@@ -31,34 +31,34 @@ export default function About() {
             activity to me is learning a second language, japanese!
           </p>
         </div>
-        <div className="flex justify-center w-full lg:ml-6 md:mt-5 md:ml-0">
+        <div className="flex w-full justify-center md:mt-5 md:ml-0 lg:ml-6">
           <img src={Me} alt="Me!" className="object-contain" />
         </div>
       </div>
       <div className="mt-12">
-        <ul className="flex flex-row items-start justify-items-start justify-around styledList md:flex-col md:items-center">
+        <ul className="styledList flex flex-row items-start justify-around justify-items-start md:flex-col md:items-center">
           <li className="md:mr-12" data-aos="fade-left">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span className="text-soft-white absolute mt-2 font-bold tracking-wider">
               Typescript
             </span>
           </li>
           <li className="md:mr-12" data-aos="fade-left" data-aos-delay="250">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span className="text-soft-white absolute mt-2 font-bold tracking-wider">
               React
             </span>
           </li>
           <li className="md:mr-12" data-aos="fade-left" data-aos-delay="500">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span className="text-soft-white absolute mt-2 font-bold tracking-wider">
               Node.js
             </span>
           </li>
           <li className="md:mr-12" data-aos="fade-left" data-aos-delay="750">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span className="text-soft-white absolute mt-2 font-bold tracking-wider">
               C#
             </span>
           </li>
           <li className="md:mr-12" data-aos="fade-left" data-aos-delay="1000">
-            <span className="absolute mt-2 font-bold tracking-wider text-soft-white">
+            <span className="text-soft-white absolute mt-2 font-bold tracking-wider">
               Twilio
             </span>
           </li>
