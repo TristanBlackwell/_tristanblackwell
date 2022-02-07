@@ -44,14 +44,14 @@ export default function App() {
         <Navbar />
 
         <Outlet />
-        <footer className="flex justify-center mt-20 py-5">
+        <footer className="mt-20 flex justify-center py-5">
           <a
             href="https://github.com/TristanBlackwell/tristanblackwellv1"
             target="_blank"
             rel="noreferrer"
             className="outline-gold focus:text-gold"
           >
-            <p className="text-sm font-extralight tracking-wide hover:text-gold transition-colors">
+            <p className="hover:text-gold text-sm font-extralight tracking-wide transition-colors">
               Handcrafted by Tristan Blackwell
             </p>
           </a>

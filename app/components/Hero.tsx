@@ -20,7 +20,7 @@ export default function Hero() {
           <span className="pl-3 text-2xl tracking-wide sm:pl-1">(Mostly)</span>
         </h1>
       </div>
-      <div className="border-gold xs:text-center ml-32 max-w-xs border-t-2 px-2 pt-4 lg:ml-0 lg:mt-8">
+      <div className="border-gold xs:text-center max-w-xs border-t-2 px-2 pt-4 lg:ml-0 lg:mt-8">
         <p data-aos="fade-down">
           I am a software engineer based in Oxford, England. I focus on the web
           but work in other areas too. Right now I’m helping build cloud

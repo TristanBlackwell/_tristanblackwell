@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="mt-40 flex flex-row md:mt-28 md:flex-col">
-        <div className="border-gold max-w-xl border-t-2 px-4 pt-4">
+        <div className="border-gold border-t-2 px-4 pt-4">
           <p data-aos="fade-up">
             Hi, I’m Tristan 👋 I’m a developer who enjoys solving challenging
             problems with clean and simple solutions. With an interest in
@@ -31,7 +31,7 @@ export default function About() {
             activity to me is learning a second language, japanese!
           </p>
         </div>
-        <div className="flex w-full justify-center md:mt-5 md:ml-0 lg:ml-6">
+        <div className="flex w-full justify-end md:mt-5 md:ml-0 md:justify-center lg:ml-6">
           <img src={Me} alt="Me!" className="object-contain" />
         </div>
       </div>

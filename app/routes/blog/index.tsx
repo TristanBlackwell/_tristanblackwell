@@ -49,7 +49,7 @@ export default function Index() {
   const postsData = useLoaderData<LoaderData>();
 
   return (
-    <div className="px-44 sm:px-8 md:px-16 lg:px-24">
+    <div className="3xl:px-72 px-44 sm:px-8 md:px-16 xl:px-20">
       <div className="xs:flex-col flex items-baseline justify-between">
         <h1 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
           Latest Posts
@@ -61,7 +61,7 @@ export default function Index() {
           Articles
         </p>
       </div>
-      <section className="mt-12 grid grid-cols-2 gap-24 sm:grid-cols-1 md:gap-8">
+      <section className="3xl:grid-cols-3 mt-12 grid gap-24 sm:grid-cols-1 md:gap-8 2xl:grid-cols-2">
         {postsData.count === 0 ? (
           <div>
             <p className="font-archivo text-soft-white text-xl">

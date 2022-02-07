@@ -56,8 +56,8 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="flex flex-row p-8 pb-24">
-        <div className="mr-20">
+      <nav className="3xl:px-72 flex flex-row py-8 pb-24 xl:px-20">
+        <div className="mr-20 md:hidden">
           <Link to="/" prefetch="intent">
             <p className="text-soft-white font-archivo whitespace-nowrap text-xl font-bold tracking-wider">
               T. Blackwell
@@ -88,7 +88,7 @@ export default function Navbar() {
           {/* <button className="btn md:hidden 2xl:block">Resume</button> */}
           {!navOpen && (
             <MenuIcon
-              className="text-gold w-8 cursor-pointer md:block 2xl:hidden"
+              className="text-gold 3xl:hidden w-8 cursor-pointer md:block"
               onClick={() => setNavOpen(!navOpen)}
             />
           )}

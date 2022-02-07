@@ -34,7 +34,7 @@ export default function Index() {
 
   return (
     <div>
-      <main className="px-20 sm:px-3">
+      <main className="px-72 sm:px-3 xl:px-20">
         <Hero />
         <About />
         <Work workItems={content.work} />

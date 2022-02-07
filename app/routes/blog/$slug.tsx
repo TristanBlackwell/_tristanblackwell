@@ -65,13 +65,13 @@ export default function PostSlug() {
   }, []);
 
   return (
-    <div className="ml-44 mr-2 sm:ml-8 md:ml-24 lg:ml-32">
-      <div className="bg-slight-blue absolute top-0 left-0 z-[-5] h-[45%] w-full opacity-50" />
-      <h1 className="font:archivo text-soft-white text-2xl font-bold tracking-wider">
+    <div className="3xl:ml-72 mr-2 sm:ml-8 md:ml-24 xl:ml-20">
+      <div className="bg-slight-blue absolute top-0 left-0 z-[-5] h-64 w-full opacity-50" />
+      <h1 className="font:archivo text-soft-white text-2xl font-bold tracking-wider sm:text-xl">
         {post.title}
       </h1>
       <div className="mt-24 grid grid-cols-4">
-        <div className="col-span-3 pr-12">
+        <div className="col-span-3 pr-12 md:col-span-4">
           <ReactMarkdown
             className="markdown min-w-full"
             components={SyntaxHighlight}
